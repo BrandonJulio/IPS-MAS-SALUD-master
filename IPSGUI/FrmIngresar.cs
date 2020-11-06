@@ -10,24 +10,14 @@ using System.Windows.Forms;
 
 namespace IPSGUI
 {
-    public partial class Menu : Form
+    public partial class FrmIngresar : Form
     {
-        public Menu()
+        public FrmIngresar()
         {
             InitializeComponent();
         }
 
-        private void INGRESAR_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Menu_Load(object sender, EventArgs e)
+        private void FrmIngresar_Load(object sender, EventArgs e)
         {
 
         }
