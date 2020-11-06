@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Subsidiado
+    public class Subsidiado: LiquidacionCuotaModeradora
     {
-        public void LiquidarSubsidiado(Liquidación liquidacion)
+        public override void CalcularTarifa()
         {
-            double Tarifa = 5;
-            if (liquidacion.TipoAfiliacion.Equals("RS"))
+            Tarifa = 5;
+
+            CuotaModeradoraReal = ValorServicioHospitalizacion * Tarifa / 100;
+            double Tope = 200000;
+            if (CuotaModeradoraReal > Tope)
             {
-                liquidacion.CuotaModeradora = liquidacion.ValorServicioHospitalizacion * Tarifa / 100;
-                double Tope = 200000;
-                if (liquidacion.CuotaModeradora > Tope)
-                {
-                    liquidacion.CuotaModeradora = Tope;
-                    liquidacion.Tope = "SI";
-                }
-                else
-                {
-                    liquidacion.Tope = "NO";
-                }
-                liquidacion.Tarifa = Tarifa;
+                CuotaModeradoraFinal = Tope;
+                AplicaTope = "SI";
+
             }
+            else
+            {
+                CuotaModeradoraFinal = CuotaModeradoraReal;
+                AplicaTope = "NO";
+
+            }
+            Tarifa = Tarifa;
+
         }
     }
 }

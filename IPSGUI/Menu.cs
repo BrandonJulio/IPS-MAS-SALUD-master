@@ -15,11 +15,13 @@ namespace IPSGUI
         public Menu()
         {
             InitializeComponent();
+
         }
 
         private void INGRESAR_Click(object sender, EventArgs e)
         {
-
+            FrmIngresar frmIngresar = new FrmIngresar();
+            frmIngresar.Show();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -30,6 +32,13 @@ namespace IPSGUI
         private void Menu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void BtnConsultar_Click(object sender, EventArgs e)
+        {
+            FrmConsulta frmConsulta = new FrmConsulta();
+            frmConsulta.Show();
+           
         }
     }
 }

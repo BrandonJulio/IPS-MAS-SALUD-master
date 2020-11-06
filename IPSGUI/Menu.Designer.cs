@@ -61,20 +61,30 @@
             // 
             // BtnConsultar
             // 
+            this.BtnConsultar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultar.Image")));
-            this.BtnConsultar.Location = new System.Drawing.Point(45, 350);
+            this.BtnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.BtnConsultar.Location = new System.Drawing.Point(45, 341);
             this.BtnConsultar.Name = "BtnConsultar";
-            this.BtnConsultar.Size = new System.Drawing.Size(99, 43);
+            this.BtnConsultar.Size = new System.Drawing.Size(121, 43);
             this.BtnConsultar.TabIndex = 1;
+            this.BtnConsultar.Text = "CONSULTAR";
+            this.BtnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnConsultar.UseVisualStyleBackColor = true;
+            this.BtnConsultar.Click += new System.EventHandler(this.BtnConsultar_Click);
             // 
             // INGRESAR
             // 
+            this.INGRESAR.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INGRESAR.Image = ((System.Drawing.Image)(resources.GetObject("INGRESAR.Image")));
+            this.INGRESAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.INGRESAR.Location = new System.Drawing.Point(45, 247);
             this.INGRESAR.Name = "INGRESAR";
-            this.INGRESAR.Size = new System.Drawing.Size(99, 46);
+            this.INGRESAR.Size = new System.Drawing.Size(121, 46);
             this.INGRESAR.TabIndex = 0;
+            this.INGRESAR.Text = "    INGRESAR";
+            this.INGRESAR.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.INGRESAR.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.INGRESAR.UseVisualStyleBackColor = true;
             this.INGRESAR.Click += new System.EventHandler(this.INGRESAR_Click);
             // 
@@ -97,6 +107,7 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.panel1);
             this.Name = "Menu";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Menu_Load);
             this.panel1.ResumeLayout(false);

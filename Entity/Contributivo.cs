@@ -6,66 +6,69 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Contributivo
+    public class Contributivo: LiquidacionCuotaModeradora
     {
-        const double SALARIOMINIMO = 900000;
-        public void LiquidarContributivo(Liquidación liquidacion)
+        public override void CalcularTarifa()
         {
-            if (liquidacion.TipoAfiliacion.Equals("RC"))
+            SalarioMinimo = 877803;
+            if (SalarioDevengado < SalarioMinimo * 2)
             {
-                if (liquidacion.SalarioDevengado < SALARIOMINIMO * 2)
+                Tarifa = 15;
+                CuotaModeradoraReal = ValorServicioHospitalizacion * Tarifa / 100;
+                double TOPE = 250000;
+                if (CuotaModeradoraReal > TOPE)
                 {
-                    double Tarifa = 15;
-                    liquidacion.CuotaModeradora = liquidacion.ValorServicioHospitalizacion * Tarifa / 100;
-                    double TOPE = 250000;
-                    if (liquidacion.CuotaModeradora > TOPE)
-                    {
-                        liquidacion.CuotaModeradora = TOPE;
-                        liquidacion.Tope = "SI";
-                    }
-                    else
-                    {
-                        liquidacion.Tope = "NO";
-                    }
-                    liquidacion.Tarifa = Tarifa;
+                    CuotaModeradoraFinal = TOPE;
+                    AplicaTope = "SI";
 
                 }
-
-                if (liquidacion.SalarioDevengado >= SALARIOMINIMO * 2 && liquidacion.SalarioDevengado <= SALARIOMINIMO * 5)
+                else
                 {
-                    double Tarifa = 20;
-                    liquidacion.CuotaModeradora = liquidacion.ValorServicioHospitalizacion * Tarifa / 100;
-                    double TOPE = 900000;
-                    if (liquidacion.CuotaModeradora > TOPE)
-                    {
-                        liquidacion.CuotaModeradora = TOPE;
-                        liquidacion.Tope = "SI";
-                    }
-                    else
-                    {
-                        liquidacion.Tope = "NO";
-                    }
-                    liquidacion.Tarifa = Tarifa;
-                }
+                    CuotaModeradoraFinal = CuotaModeradoraReal;
+                    AplicaTope = "NO";
 
-                if (liquidacion.SalarioDevengado > SALARIOMINIMO * 5)
-                {
-                    double Tarifa = 25;
-                    liquidacion.CuotaModeradora = liquidacion.ValorServicioHospitalizacion * Tarifa / 100;
-                    double TOPE = 1500000;
-                    if (liquidacion.CuotaModeradora > TOPE)
-                    {
-                        liquidacion.CuotaModeradora = TOPE;
-                        liquidacion.Tope = "SI";
-                    }
-                    else
-                    {
-                        liquidacion.Tope = "NO";
-                    }
-                    liquidacion.Tarifa = Tarifa;
                 }
 
             }
+
+            if (SalarioDevengado >= SalarioMinimo * 2 && SalarioDevengado <= SalarioMinimo * 5)
+            {
+                Tarifa = 20;
+                CuotaModeradoraReal = ValorServicioHospitalizacion * Tarifa / 100;
+                double TOPE = 900000;
+                if (CuotaModeradoraReal > TOPE)
+                {
+                    CuotaModeradoraFinal = TOPE;
+                    AplicaTope = "SI";
+
+                }
+                else
+                {
+                    CuotaModeradoraFinal = CuotaModeradoraReal;
+                    AplicaTope = "NO";
+
+                }
+            }
+
+            if (SalarioDevengado > SalarioMinimo * 5)
+            {
+                Tarifa = 25;
+                CuotaModeradoraReal = ValorServicioHospitalizacion * Tarifa / 100;
+                double TOPE = 1500000;
+                if (CuotaModeradoraReal > TOPE)
+                {
+                    CuotaModeradoraFinal = TOPE;
+                    AplicaTope = "SI";
+
+                }
+                else
+                {
+                    CuotaModeradoraFinal = CuotaModeradoraReal;
+                    AplicaTope = "NO";
+
+                }
+            }
+
         }
     }
 }
