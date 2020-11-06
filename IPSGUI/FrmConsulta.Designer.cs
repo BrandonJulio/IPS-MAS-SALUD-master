@@ -30,12 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsulta));
             this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.TxtValorTotalContributivo = new System.Windows.Forms.TextBox();
-            this.TxtValorTotalSubsidiado = new System.Windows.Forms.TextBox();
-            this.TxtValorTotalLiquidacion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TxtContributivo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,8 +39,8 @@
             this.CmbTipoAfiliacion = new System.Windows.Forms.ComboBox();
             this.DgvLiquidacion = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.BtnRegresar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DgvLiquidacion)).BeginInit();
             this.panel1.SuspendLayout();
@@ -62,60 +56,6 @@
             this.label7.Size = new System.Drawing.Size(91, 15);
             this.label7.TabIndex = 36;
             this.label7.Text = "Tipo de afiliación";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(54, 458);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(122, 15);
-            this.label6.TabIndex = 35;
-            this.label6.Text = "Valor total liquidaciones";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(323, 458);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 15);
-            this.label5.TabIndex = 34;
-            this.label5.Text = "Valor total contributivo";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(576, 458);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(115, 15);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Valor Total Subsidiado";
-            // 
-            // TxtValorTotalContributivo
-            // 
-            this.TxtValorTotalContributivo.Location = new System.Drawing.Point(326, 435);
-            this.TxtValorTotalContributivo.Name = "TxtValorTotalContributivo";
-            this.TxtValorTotalContributivo.ReadOnly = true;
-            this.TxtValorTotalContributivo.Size = new System.Drawing.Size(143, 20);
-            this.TxtValorTotalContributivo.TabIndex = 32;
-            // 
-            // TxtValorTotalSubsidiado
-            // 
-            this.TxtValorTotalSubsidiado.Location = new System.Drawing.Point(579, 435);
-            this.TxtValorTotalSubsidiado.Name = "TxtValorTotalSubsidiado";
-            this.TxtValorTotalSubsidiado.ReadOnly = true;
-            this.TxtValorTotalSubsidiado.Size = new System.Drawing.Size(143, 20);
-            this.TxtValorTotalSubsidiado.TabIndex = 31;
-            // 
-            // TxtValorTotalLiquidacion
-            // 
-            this.TxtValorTotalLiquidacion.Location = new System.Drawing.Point(57, 435);
-            this.TxtValorTotalLiquidacion.Name = "TxtValorTotalLiquidacion";
-            this.TxtValorTotalLiquidacion.ReadOnly = true;
-            this.TxtValorTotalLiquidacion.Size = new System.Drawing.Size(143, 20);
-            this.TxtValorTotalLiquidacion.TabIndex = 30;
             // 
             // label3
             // 
@@ -182,6 +122,7 @@
             this.CmbTipoAfiliacion.Name = "CmbTipoAfiliacion";
             this.CmbTipoAfiliacion.Size = new System.Drawing.Size(143, 21);
             this.CmbTipoAfiliacion.TabIndex = 23;
+            this.CmbTipoAfiliacion.SelectedIndexChanged += new System.EventHandler(this.CmbTipoAfiliacion_SelectedIndexChanged);
             // 
             // DgvLiquidacion
             // 
@@ -191,6 +132,7 @@
             this.DgvLiquidacion.Name = "DgvLiquidacion";
             this.DgvLiquidacion.Size = new System.Drawing.Size(742, 176);
             this.DgvLiquidacion.TabIndex = 22;
+            this.DgvLiquidacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLiquidacion_CellContentClick);
             // 
             // panel1
             // 
@@ -203,6 +145,16 @@
             this.panel1.Size = new System.Drawing.Size(800, 100);
             this.panel1.TabIndex = 37;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(104, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 85);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -214,22 +166,12 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "CONSULTA";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(104, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 85);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
             // BtnRegresar
             // 
             this.BtnRegresar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegresar.Image")));
             this.BtnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRegresar.Location = new System.Drawing.Point(57, 503);
+            this.BtnRegresar.Location = new System.Drawing.Point(57, 454);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(119, 35);
             this.BtnRegresar.TabIndex = 38;
@@ -243,16 +185,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 550);
+            this.ClientSize = new System.Drawing.Size(800, 528);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.TxtValorTotalContributivo);
-            this.Controls.Add(this.TxtValorTotalSubsidiado);
-            this.Controls.Add(this.TxtValorTotalLiquidacion);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.TxtContributivo);
             this.Controls.Add(this.label2);
@@ -275,12 +211,6 @@
 
         #endregion
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox TxtValorTotalContributivo;
-        private System.Windows.Forms.TextBox TxtValorTotalSubsidiado;
-        private System.Windows.Forms.TextBox TxtValorTotalLiquidacion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox TxtContributivo;
         private System.Windows.Forms.Label label2;

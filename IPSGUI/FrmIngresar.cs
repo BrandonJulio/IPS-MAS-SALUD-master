@@ -101,7 +101,7 @@ namespace IPSGUI
                 else
                 {
 
-                    MessageBox.Show($"LA PERSONA CON LA IDENTIFICACIÓN:  {identificacion} NO SE ENCUENTRA EN NUESTRA BASE DE DATOS");
+                    MessageBox.Show($"LA PERSONA CON LA IDENTIFICACIÓN:  {identificacion} NO SE ENCUENTRA REGISTRADA");
                     Limpiar();
 
                 }
