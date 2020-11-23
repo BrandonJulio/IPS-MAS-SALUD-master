@@ -21,7 +21,7 @@ namespace IPSGUI
         private void INGRESAR_Click(object sender, EventArgs e)
         {
             FrmIngresar frmIngresar = new FrmIngresar();
-            frmIngresar.Show();
+            frmIngresar.Show();   
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,6 +39,14 @@ namespace IPSGUI
             FrmConsulta frmConsulta = new FrmConsulta();
             frmConsulta.Show();
            
+        }
+
+        private void BtnSalir_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

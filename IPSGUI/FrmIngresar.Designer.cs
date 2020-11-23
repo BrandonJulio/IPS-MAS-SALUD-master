@@ -45,6 +45,7 @@
             this.BtnEliminar = new System.Windows.Forms.Button();
             this.BtnModificar = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.BtnRegresar = new System.Windows.Forms.Button();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lbIngresar = new System.Windows.Forms.Label();
@@ -67,7 +68,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(238, 377);
+            this.label6.Location = new System.Drawing.Point(280, 401);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 13);
             this.label6.TabIndex = 18;
@@ -77,7 +78,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(238, 239);
+            this.label5.Location = new System.Drawing.Point(280, 263);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 17;
@@ -87,7 +88,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(238, 147);
+            this.label4.Location = new System.Drawing.Point(280, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 13);
             this.label4.TabIndex = 16;
@@ -97,7 +98,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(238, 285);
+            this.label3.Location = new System.Drawing.Point(280, 309);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 15;
@@ -107,7 +108,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(238, 331);
+            this.label2.Location = new System.Drawing.Point(280, 355);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 14;
@@ -117,7 +118,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(238, 193);
+            this.label1.Location = new System.Drawing.Point(280, 217);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 13;
@@ -125,21 +126,21 @@
             // 
             // TxtValorHospitalizacion
             // 
-            this.TxtValorHospitalizacion.Location = new System.Drawing.Point(452, 369);
+            this.TxtValorHospitalizacion.Location = new System.Drawing.Point(494, 393);
             this.TxtValorHospitalizacion.Name = "TxtValorHospitalizacion";
             this.TxtValorHospitalizacion.Size = new System.Drawing.Size(138, 20);
             this.TxtValorHospitalizacion.TabIndex = 24;
             // 
             // TxtSalarioDevengado
             // 
-            this.TxtSalarioDevengado.Location = new System.Drawing.Point(452, 323);
+            this.TxtSalarioDevengado.Location = new System.Drawing.Point(494, 347);
             this.TxtSalarioDevengado.Name = "TxtSalarioDevengado";
             this.TxtSalarioDevengado.Size = new System.Drawing.Size(138, 20);
             this.TxtSalarioDevengado.TabIndex = 23;
             // 
             // TxtIdentificacion
             // 
-            this.TxtIdentificacion.Location = new System.Drawing.Point(452, 131);
+            this.TxtIdentificacion.Location = new System.Drawing.Point(494, 155);
             this.TxtIdentificacion.Name = "TxtIdentificacion";
             this.TxtIdentificacion.Size = new System.Drawing.Size(138, 20);
             this.TxtIdentificacion.TabIndex = 22;
@@ -147,7 +148,7 @@
             // 
             // DtpFechaLiquidacion
             // 
-            this.DtpFechaLiquidacion.Location = new System.Drawing.Point(452, 230);
+            this.DtpFechaLiquidacion.Location = new System.Drawing.Point(494, 254);
             this.DtpFechaLiquidacion.Name = "DtpFechaLiquidacion";
             this.DtpFechaLiquidacion.Size = new System.Drawing.Size(209, 20);
             this.DtpFechaLiquidacion.TabIndex = 21;
@@ -158,29 +159,30 @@
             this.CmbTipoAfiliacion.Items.AddRange(new object[] {
             "Contributivo",
             "Subsidiado"});
-            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(452, 276);
+            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(494, 300);
             this.CmbTipoAfiliacion.Name = "CmbTipoAfiliacion";
             this.CmbTipoAfiliacion.Size = new System.Drawing.Size(138, 21);
             this.CmbTipoAfiliacion.TabIndex = 20;
             // 
             // TxtNumeroLiquidacion
             // 
-            this.TxtNumeroLiquidacion.Location = new System.Drawing.Point(452, 184);
+            this.TxtNumeroLiquidacion.Location = new System.Drawing.Point(494, 208);
             this.TxtNumeroLiquidacion.Name = "TxtNumeroLiquidacion";
             this.TxtNumeroLiquidacion.Size = new System.Drawing.Size(138, 20);
             this.TxtNumeroLiquidacion.TabIndex = 19;
             // 
             // BtnGuardar
             // 
+            this.BtnGuardar.FlatAppearance.BorderSize = 0;
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnGuardar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnGuardar.Image = ((System.Drawing.Image)(resources.GetObject("BtnGuardar.Image")));
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BtnGuardar.Location = new System.Drawing.Point(12, 201);
+            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGuardar.Location = new System.Drawing.Point(22, 179);
             this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Size = new System.Drawing.Size(163, 46);
+            this.BtnGuardar.Size = new System.Drawing.Size(144, 46);
             this.BtnGuardar.TabIndex = 25;
-            this.BtnGuardar.Text = "     GUARDAR";
-            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGuardar.Text = "   GUARDAR";
             this.BtnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnGuardar.UseMnemonic = false;
             this.BtnGuardar.UseVisualStyleBackColor = true;
@@ -188,14 +190,16 @@
             // 
             // BtnEliminar
             // 
+            this.BtnEliminar.FlatAppearance.BorderSize = 0;
+            this.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnEliminar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("BtnEliminar.Image")));
-            this.BtnEliminar.Location = new System.Drawing.Point(12, 280);
+            this.BtnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnEliminar.Location = new System.Drawing.Point(22, 251);
             this.BtnEliminar.Name = "BtnEliminar";
-            this.BtnEliminar.Size = new System.Drawing.Size(163, 52);
+            this.BtnEliminar.Size = new System.Drawing.Size(153, 52);
             this.BtnEliminar.TabIndex = 26;
-            this.BtnEliminar.Text = "ELIMINAR";
-            this.BtnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnEliminar.Text = "   ELIMINAR";
             this.BtnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnEliminar.UseCompatibleTextRendering = true;
             this.BtnEliminar.UseVisualStyleBackColor = true;
@@ -203,14 +207,16 @@
             // 
             // BtnModificar
             // 
+            this.BtnModificar.FlatAppearance.BorderSize = 0;
+            this.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnModificar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnModificar.Image = ((System.Drawing.Image)(resources.GetObject("BtnModificar.Image")));
-            this.BtnModificar.Location = new System.Drawing.Point(12, 369);
+            this.BtnModificar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnModificar.Location = new System.Drawing.Point(22, 327);
             this.BtnModificar.Name = "BtnModificar";
-            this.BtnModificar.Size = new System.Drawing.Size(163, 52);
+            this.BtnModificar.Size = new System.Drawing.Size(153, 52);
             this.BtnModificar.TabIndex = 27;
-            this.BtnModificar.Text = "MODIFICAR";
-            this.BtnModificar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnModificar.Text = "   MODIFICAR";
             this.BtnModificar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtnModificar.UseCompatibleTextRendering = true;
             this.BtnModificar.UseMnemonic = false;
@@ -220,20 +226,39 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.BtnRegresar);
             this.panel1.Controls.Add(this.BtnModificar);
             this.panel1.Controls.Add(this.BtnGuardar);
             this.panel1.Controls.Add(this.BtnEliminar);
             this.panel1.Location = new System.Drawing.Point(0, -3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(196, 523);
+            this.panel1.Size = new System.Drawing.Size(196, 559);
             this.panel1.TabIndex = 28;
+            // 
+            // BtnRegresar
+            // 
+            this.BtnRegresar.FlatAppearance.BorderSize = 0;
+            this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnRegresar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegresar.Image")));
+            this.BtnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnRegresar.Location = new System.Drawing.Point(22, 408);
+            this.BtnRegresar.Name = "BtnRegresar";
+            this.BtnRegresar.Size = new System.Drawing.Size(119, 35);
+            this.BtnRegresar.TabIndex = 39;
+            this.BtnRegresar.Text = "REGRESAR";
+            this.BtnRegresar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnRegresar.UseVisualStyleBackColor = true;
+            this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
             // BtnLimpiar
             // 
+            this.BtnLimpiar.FlatAppearance.BorderSize = 0;
+            this.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLimpiar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiar.Image")));
             this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLimpiar.Location = new System.Drawing.Point(452, 427);
+            this.BtnLimpiar.Location = new System.Drawing.Point(494, 451);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnLimpiar.Size = new System.Drawing.Size(108, 41);
@@ -252,7 +277,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(800, 100);
+            this.panel2.Size = new System.Drawing.Size(963, 100);
             this.panel2.TabIndex = 30;
             // 
             // lbIngresar
@@ -260,7 +285,7 @@
             this.lbIngresar.AutoSize = true;
             this.lbIngresar.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIngresar.ForeColor = System.Drawing.Color.White;
-            this.lbIngresar.Location = new System.Drawing.Point(388, 39);
+            this.lbIngresar.Location = new System.Drawing.Point(457, 43);
             this.lbIngresar.Name = "lbIngresar";
             this.lbIngresar.Size = new System.Drawing.Size(119, 24);
             this.lbIngresar.TabIndex = 29;
@@ -269,7 +294,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(38, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(54, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -279,7 +304,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(622, 184);
+            this.pictureBox2.Location = new System.Drawing.Point(664, 208);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -288,8 +313,10 @@
             // 
             // BtnBuscar
             // 
+            this.BtnBuscar.FlatAppearance.BorderSize = 0;
+            this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("BtnBuscar.Image")));
-            this.BtnBuscar.Location = new System.Drawing.Point(612, 117);
+            this.BtnBuscar.Location = new System.Drawing.Point(654, 141);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(49, 37);
             this.BtnBuscar.TabIndex = 32;
@@ -299,7 +326,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(679, 230);
+            this.pictureBox3.Location = new System.Drawing.Point(721, 254);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -309,7 +336,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(612, 323);
+            this.pictureBox4.Location = new System.Drawing.Point(654, 347);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -319,7 +346,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(612, 366);
+            this.pictureBox5.Location = new System.Drawing.Point(654, 390);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 24);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -331,7 +358,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 517);
+            this.ClientSize = new System.Drawing.Size(963, 552);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -352,6 +379,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmIngresar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIngresar";
@@ -396,5 +424,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Button BtnRegresar;
     }
 }

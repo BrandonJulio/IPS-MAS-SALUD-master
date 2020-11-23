@@ -152,6 +152,20 @@
         gg==
 </value>
   </data>
+  <data name="BtnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
+        3QAAAN0BcFOiBwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGhSURBVEhLrZZP
+        SgMxFIez6MYLTK0L9wXXegel4AXsSSxaD1A8iAsRC71BQeiqCJ7AKygqjr8vJEOmTaYzNQ8+eHnv5dck
+        kz81ZVkmkRXiQtyIJ/HueBZ34lIcxfp64kFjemIivgSBJr7FrehFtbYCxgzFi6DxI+ZiKkZiIA7FubgW
+        j4IaalfiZEuv1jBmLD4EjTdxFuZjyE5dLY1PcVXLB4WMHPFfMRMHYWET1Ip7Qd+HWs4VsOZ+WWZhQRdk
+        x6I2MJ/gg+Iw1dYjbwPGVmS38LF2rnlXMPY53jxRsBBL0Q9ifRdbhLUxMA4R3jRRgBDOq2C2gE9sGesT
+        gnFC8UaJAkbrBdcOfGLVrFJgHH28QawAZIzaCwN+Eav1yFhayP8DMk48Dtr5l0jGtYKDdv6PLOPuwkE7
+        /zaVcUHioG1HlO2goeG00Cx8MMtVQV+nQWNiYy6R67LjFsZByz5AYfK/1zV96IvGsMptFO7z4LDmflno
+        O67lw4YN7H4yAZ8YOf9k0qcaeaW3GbDBbo8+NdS2e/RDZGzh2N8WfGLkGu6k0vwBTwxncyls5F4AAAAA
+        SUVORK5CYII=
+</value>
+  </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         /9j/4AAQSkZJRgABAQEAAAAAAAD/4Qd4RXhpZgAATU0AKgAAAAgABQEOAAIAAACRAAAASgExAAIAAAAH

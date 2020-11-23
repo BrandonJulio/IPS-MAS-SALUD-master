@@ -135,6 +135,15 @@ namespace IPSGUI
         {
 
         }
-    }
-    
+
+        private void BtnRegresar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Desea Regresar?", "Regresar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Menu menu = new Menu();
+                menu.Show();
+                this.Close();
+            }
+        }
+    }  
 }

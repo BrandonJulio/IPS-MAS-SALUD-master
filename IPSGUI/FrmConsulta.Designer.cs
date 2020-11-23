@@ -51,65 +51,72 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(54, 341);
+            this.label7.Location = new System.Drawing.Point(101, 354);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 15);
             this.label7.TabIndex = 36;
             this.label7.Text = "Tipo de afiliación";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(326, 392);
+            this.label3.Location = new System.Drawing.Point(373, 405);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(79, 15);
             this.label3.TabIndex = 29;
             this.label3.Text = "L.Contributivo";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // TxtContributivo
             // 
-            this.TxtContributivo.Location = new System.Drawing.Point(326, 369);
+            this.TxtContributivo.Location = new System.Drawing.Point(373, 382);
             this.TxtContributivo.Name = "TxtContributivo";
             this.TxtContributivo.ReadOnly = true;
             this.TxtContributivo.Size = new System.Drawing.Size(49, 20);
             this.TxtContributivo.TabIndex = 28;
+            this.TxtContributivo.TextChanged += new System.EventHandler(this.TxtContributivo_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(576, 392);
+            this.label2.Location = new System.Drawing.Point(623, 405);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 27;
             this.label2.Text = "L. Subsidiado";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // TxtSubsidiado
             // 
-            this.TxtSubsidiado.Location = new System.Drawing.Point(579, 369);
+            this.TxtSubsidiado.Location = new System.Drawing.Point(626, 382);
             this.TxtSubsidiado.Name = "TxtSubsidiado";
             this.TxtSubsidiado.ReadOnly = true;
             this.TxtSubsidiado.Size = new System.Drawing.Size(49, 20);
             this.TxtSubsidiado.TabIndex = 26;
+            this.TxtSubsidiado.TextChanged += new System.EventHandler(this.TxtSubsidiado_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(54, 392);
+            this.label1.Location = new System.Drawing.Point(101, 405);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(150, 15);
             this.label1.TabIndex = 25;
             this.label1.Text = "Número total de liquidaciones";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // TxtTotal
             // 
-            this.TxtTotal.Location = new System.Drawing.Point(57, 369);
+            this.TxtTotal.Location = new System.Drawing.Point(104, 382);
             this.TxtTotal.Name = "TxtTotal";
             this.TxtTotal.ReadOnly = true;
             this.TxtTotal.Size = new System.Drawing.Size(49, 20);
             this.TxtTotal.TabIndex = 24;
+            this.TxtTotal.TextChanged += new System.EventHandler(this.TxtTotal_TextChanged);
             // 
             // CmbTipoAfiliacion
             // 
@@ -118,7 +125,7 @@
             "Todos",
             "Contributivo",
             "Subsidiado"});
-            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(57, 317);
+            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(104, 330);
             this.CmbTipoAfiliacion.Name = "CmbTipoAfiliacion";
             this.CmbTipoAfiliacion.Size = new System.Drawing.Size(143, 21);
             this.CmbTipoAfiliacion.TabIndex = 23;
@@ -130,7 +137,7 @@
             this.DgvLiquidacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvLiquidacion.Location = new System.Drawing.Point(25, 118);
             this.DgvLiquidacion.Name = "DgvLiquidacion";
-            this.DgvLiquidacion.Size = new System.Drawing.Size(742, 176);
+            this.DgvLiquidacion.Size = new System.Drawing.Size(862, 176);
             this.DgvLiquidacion.TabIndex = 22;
             this.DgvLiquidacion.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLiquidacion_CellContentClick);
             // 
@@ -142,8 +149,9 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 100);
+            this.panel1.Size = new System.Drawing.Size(913, 100);
             this.panel1.TabIndex = 37;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // pictureBox1
             // 
@@ -160,7 +168,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(286, 42);
+            this.label8.Location = new System.Drawing.Point(367, 42);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(169, 32);
             this.label8.TabIndex = 0;
@@ -168,10 +176,12 @@
             // 
             // BtnRegresar
             // 
+            this.BtnRegresar.FlatAppearance.BorderSize = 0;
+            this.BtnRegresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnRegresar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegresar.Image = ((System.Drawing.Image)(resources.GetObject("BtnRegresar.Image")));
             this.BtnRegresar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnRegresar.Location = new System.Drawing.Point(57, 454);
+            this.BtnRegresar.Location = new System.Drawing.Point(104, 467);
             this.BtnRegresar.Name = "BtnRegresar";
             this.BtnRegresar.Size = new System.Drawing.Size(119, 35);
             this.BtnRegresar.TabIndex = 38;
@@ -185,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 528);
+            this.ClientSize = new System.Drawing.Size(913, 566);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label7);
@@ -197,6 +207,7 @@
             this.Controls.Add(this.TxtTotal);
             this.Controls.Add(this.CmbTipoAfiliacion);
             this.Controls.Add(this.DgvLiquidacion);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmConsulta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmConsulta";

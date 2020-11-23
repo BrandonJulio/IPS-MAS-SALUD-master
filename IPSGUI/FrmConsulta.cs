@@ -23,9 +23,12 @@ namespace IPSGUI
 
         private void BtnRegresar_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu();
+            if (MessageBox.Show("¿Desea Regresar?", "Regresar", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1) == System.Windows.Forms.DialogResult.Yes)
+            {
+                Menu menu = new Menu();
             menu.Show();
-            
+            this.Close();
+            } 
         }
         private void LlenarTabla()
         {
@@ -89,6 +92,46 @@ namespace IPSGUI
         private void CmbTipoAfiliacion_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrepararDatos();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtContributivo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtSubsidiado_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TxtTotal_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
