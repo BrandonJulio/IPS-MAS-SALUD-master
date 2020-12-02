@@ -14,7 +14,7 @@ namespace IPSGUI
 {
     public partial class FrmConsulta : Form
     {
-        LiquidacionCuotaModeradoraService service = new LiquidacionCuotaModeradoraService();
+        //LiquidacionCuotaModeradoraService service = new LiquidacionCuotaModeradoraService();
         public FrmConsulta()
         {
             InitializeComponent();
@@ -33,13 +33,13 @@ namespace IPSGUI
         private void LlenarTabla()
         {
             DgvLiquidacion.DataSource = null;
-            DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ConsultarTodos();
+            //DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ConsultarTodos();
         }
         private void CargarContributivo()
         {
             DgvLiquidacion.DataSource = null;
-            DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ListarContributivo().ToList();
-            TxtContributivo.Text = service.TotalizarContributivo().ToString();
+            //DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ListarContributivo().ToList();
+            //TxtContributivo.Text = service.TotalizarContributivo().ToString();
             TxtSubsidiado.Text = "";
             LimpiarTxt();
 
@@ -48,17 +48,17 @@ namespace IPSGUI
         private void CargarSubsidiado()
         {
             DgvLiquidacion.DataSource = null;
-            DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ListarSubsidiado().ToList();
-            TxtSubsidiado.Text = service.TotalizarSubsidiado().ToString();
+            //DgvLiquidacion.DataSource = LiquidacionCuotaModeradoraService.ListarSubsidiado().ToList();
+            //TxtSubsidiado.Text = service.TotalizarSubsidiado().ToString();
             TxtContributivo.Text = "";
             LimpiarTxt();
         }
         private void CargarTodos()
         {
             LlenarTabla();
-            TxtTotal.Text = service.TotalizarTodos().ToString();
-            TxtContributivo.Text = service.TotalizarContributivo().ToString();
-            TxtSubsidiado.Text = service.TotalizarSubsidiado().ToString();
+            //TxtTotal.Text = service.TotalizarTodos().ToString();
+            //TxtContributivo.Text = service.TotalizarContributivo().ToString();
+            //TxtSubsidiado.Text = service.TotalizarSubsidiado().ToString();
 
         }
         private void LimpiarTxt()

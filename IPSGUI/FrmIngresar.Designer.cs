@@ -68,7 +68,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(280, 401);
+            this.label6.Location = new System.Drawing.Point(280, 406);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(176, 13);
             this.label6.TabIndex = 18;
@@ -78,7 +78,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(280, 263);
+            this.label5.Location = new System.Drawing.Point(280, 268);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 17;
@@ -88,17 +88,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(280, 171);
+            this.label4.Location = new System.Drawing.Point(280, 176);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(131, 13);
+            this.label4.Size = new System.Drawing.Size(138, 13);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Idetificación Paciente";
+            this.label4.Text = "Identificación Paciente";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(280, 309);
+            this.label3.Location = new System.Drawing.Point(280, 314);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(105, 13);
             this.label3.TabIndex = 15;
@@ -108,7 +109,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(280, 355);
+            this.label2.Location = new System.Drawing.Point(280, 360);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 13);
             this.label2.TabIndex = 14;
@@ -118,7 +119,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(280, 217);
+            this.label1.Location = new System.Drawing.Point(280, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 13);
             this.label1.TabIndex = 13;
@@ -126,21 +127,21 @@
             // 
             // TxtValorHospitalizacion
             // 
-            this.TxtValorHospitalizacion.Location = new System.Drawing.Point(494, 393);
+            this.TxtValorHospitalizacion.Location = new System.Drawing.Point(494, 398);
             this.TxtValorHospitalizacion.Name = "TxtValorHospitalizacion";
             this.TxtValorHospitalizacion.Size = new System.Drawing.Size(138, 20);
             this.TxtValorHospitalizacion.TabIndex = 24;
             // 
             // TxtSalarioDevengado
             // 
-            this.TxtSalarioDevengado.Location = new System.Drawing.Point(494, 347);
+            this.TxtSalarioDevengado.Location = new System.Drawing.Point(494, 352);
             this.TxtSalarioDevengado.Name = "TxtSalarioDevengado";
             this.TxtSalarioDevengado.Size = new System.Drawing.Size(138, 20);
             this.TxtSalarioDevengado.TabIndex = 23;
             // 
             // TxtIdentificacion
             // 
-            this.TxtIdentificacion.Location = new System.Drawing.Point(494, 155);
+            this.TxtIdentificacion.Location = new System.Drawing.Point(494, 160);
             this.TxtIdentificacion.Name = "TxtIdentificacion";
             this.TxtIdentificacion.Size = new System.Drawing.Size(138, 20);
             this.TxtIdentificacion.TabIndex = 22;
@@ -148,7 +149,7 @@
             // 
             // DtpFechaLiquidacion
             // 
-            this.DtpFechaLiquidacion.Location = new System.Drawing.Point(494, 254);
+            this.DtpFechaLiquidacion.Location = new System.Drawing.Point(494, 259);
             this.DtpFechaLiquidacion.Name = "DtpFechaLiquidacion";
             this.DtpFechaLiquidacion.Size = new System.Drawing.Size(209, 20);
             this.DtpFechaLiquidacion.TabIndex = 21;
@@ -159,14 +160,14 @@
             this.CmbTipoAfiliacion.Items.AddRange(new object[] {
             "Contributivo",
             "Subsidiado"});
-            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(494, 300);
+            this.CmbTipoAfiliacion.Location = new System.Drawing.Point(494, 305);
             this.CmbTipoAfiliacion.Name = "CmbTipoAfiliacion";
             this.CmbTipoAfiliacion.Size = new System.Drawing.Size(138, 21);
             this.CmbTipoAfiliacion.TabIndex = 20;
             // 
             // TxtNumeroLiquidacion
             // 
-            this.TxtNumeroLiquidacion.Location = new System.Drawing.Point(494, 208);
+            this.TxtNumeroLiquidacion.Location = new System.Drawing.Point(494, 213);
             this.TxtNumeroLiquidacion.Name = "TxtNumeroLiquidacion";
             this.TxtNumeroLiquidacion.Size = new System.Drawing.Size(138, 20);
             this.TxtNumeroLiquidacion.TabIndex = 19;
@@ -258,7 +259,7 @@
             this.BtnLimpiar.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnLimpiar.Image = ((System.Drawing.Image)(resources.GetObject("BtnLimpiar.Image")));
             this.BtnLimpiar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnLimpiar.Location = new System.Drawing.Point(494, 451);
+            this.BtnLimpiar.Location = new System.Drawing.Point(494, 456);
             this.BtnLimpiar.Name = "BtnLimpiar";
             this.BtnLimpiar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtnLimpiar.Size = new System.Drawing.Size(108, 41);
@@ -285,7 +286,7 @@
             this.lbIngresar.AutoSize = true;
             this.lbIngresar.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIngresar.ForeColor = System.Drawing.Color.White;
-            this.lbIngresar.Location = new System.Drawing.Point(457, 43);
+            this.lbIngresar.Location = new System.Drawing.Point(472, 46);
             this.lbIngresar.Name = "lbIngresar";
             this.lbIngresar.Size = new System.Drawing.Size(119, 24);
             this.lbIngresar.TabIndex = 29;
@@ -304,7 +305,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(664, 208);
+            this.pictureBox2.Location = new System.Drawing.Point(664, 213);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(39, 22);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -316,7 +317,7 @@
             this.BtnBuscar.FlatAppearance.BorderSize = 0;
             this.BtnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("BtnBuscar.Image")));
-            this.BtnBuscar.Location = new System.Drawing.Point(654, 141);
+            this.BtnBuscar.Location = new System.Drawing.Point(654, 151);
             this.BtnBuscar.Name = "BtnBuscar";
             this.BtnBuscar.Size = new System.Drawing.Size(49, 37);
             this.BtnBuscar.TabIndex = 32;
@@ -326,7 +327,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(721, 254);
+            this.pictureBox3.Location = new System.Drawing.Point(721, 259);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(36, 22);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -336,7 +337,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(654, 347);
+            this.pictureBox4.Location = new System.Drawing.Point(654, 352);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(40, 21);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -346,7 +347,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(654, 390);
+            this.pictureBox5.Location = new System.Drawing.Point(654, 395);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 24);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

@@ -16,9 +16,12 @@ namespace IPSGUI
     public partial class FrmIngresar : Form
     {
         LiquidacionCuotaModeradora liquidacion;
+        LiquidacionCuotaModeradoraService liquidacionservice;
+
         public FrmIngresar()
         {
             InitializeComponent();
+            liquidacionservice = new LiquidacionCuotaModeradoraService(ConfigConnection.connectionString);
         }
 
         private void FrmIngresar_Load(object sender, EventArgs e)
@@ -33,10 +36,10 @@ namespace IPSGUI
 
         private void BtnIngresar_Click(object sender, EventArgs e)
         {
-            LiquidacionCuotaModeradoraService service = new LiquidacionCuotaModeradoraService();
+            liquidacionservice = new LiquidacionCuotaModeradoraService(ConfigConnection.connectionString);
             LiquidacionCuotaModeradora cuotaModeradora = MapearLiquidacion();
             cuotaModeradora.CalcularTarifa();
-            string mesanje = service.Guardar(cuotaModeradora);
+            string mesanje = liquidacionservice.Guardar(cuotaModeradora);
             MessageBox.Show(mesanje, "MENSAJE GUARDADO", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
         private LiquidacionCuotaModeradora MapearLiquidacion()
@@ -82,29 +85,29 @@ namespace IPSGUI
 
         private void BtnBuscar_Click(object sender, EventArgs e)
         {
-            LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+            //LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
             string identificacion = TxtIdentificacion.Text;
             if (identificacion != "")
             {
-                LiquidacionCuotaModeradora Liquidacion = liquidacionCuotaModeradoraService.BuscarID(identificacion);
+                //LiquidacionCuotaModeradora Liquidacion = liquidacionCuotaModeradoraService.BuscarID(identificacion);
 
-                if (Liquidacion != null)
-                {
-                    TxtIdentificacion.Text = Liquidacion.Identificacion;
-                    TxtNumeroLiquidacion.Text = Liquidacion.NumeroLiquidacion;
-                    DtpFechaLiquidacion.Text = Liquidacion.FechaLiquidacion.ToString();
-                    CmbTipoAfiliacion.Text = Liquidacion.TipoAfiliacion;
-                    TxtSalarioDevengado.Text = Liquidacion.SalarioDevengado.ToString();
-                    TxtValorHospitalizacion.Text = Liquidacion.ValorServicioHospitalizacion.ToString();
+                //if (Liquidacion != null)
+                //{
+                //    //TxtIdentificacion.Text = Liquidacion.Identificacion;
+                //    //TxtNumeroLiquidacion.Text = Liquidacion.NumeroLiquidacion;
+                //    //DtpFechaLiquidacion.Text = Liquidacion.FechaLiquidacion.ToString();
+                //    //CmbTipoAfiliacion.Text = Liquidacion.TipoAfiliacion;
+                //    //TxtSalarioDevengado.Text = Liquidacion.SalarioDevengado.ToString();
+                //    //TxtValorHospitalizacion.Text = Liquidacion.ValorServicioHospitalizacion.ToString();
 
-                }
-                else
-                {
+                //}
+                //else
+                //{
 
-                    MessageBox.Show($"LA PERSONA CON LA IDENTIFICACIÓN:  {identificacion} NO SE ENCUENTRA REGISTRADA");
-                    Limpiar();
+                //    MessageBox.Show($"LA PERSONA CON LA IDENTIFICACIÓN:  {identificacion} NO SE ENCUENTRA REGISTRADA");
+                //    Limpiar();
 
-                }
+                //}
 
             }
             else
@@ -122,10 +125,10 @@ namespace IPSGUI
             var respuesta = MessageBox.Show("ESTA SEGURO DE ELIMINAR EL REGISTRO", "MENSAJE DE ELIMINACIÓN", MessageBoxButtons.YesNo);
             if (respuesta == DialogResult.Yes)
             {
-                LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
-                string identificacion = TxtIdentificacion.Text;
-                string mensaje2 = liquidacionCuotaModeradoraService.Eliminar(identificacion);
-                MessageBox.Show(mensaje2);
+                //LiquidacionCuotaModeradoraService liquidacionCuotaModeradoraService = new LiquidacionCuotaModeradoraService();
+                //string identificacion = TxtIdentificacion.Text;
+                //string mensaje2 = liquidacionCuotaModeradoraService.Eliminar(identificacion);
+                //MessageBox.Show(mensaje2);
                 Limpiar();
 
             }
@@ -144,6 +147,11 @@ namespace IPSGUI
                 menu.Show();
                 this.Close();
             }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }  
 }

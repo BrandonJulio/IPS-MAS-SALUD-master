@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.panel1 = new System.Windows.Forms.Panel();
             this.Bienvenido = new System.Windows.Forms.Label();
@@ -35,6 +36,7 @@
             this.INGRESAR = new System.Windows.Forms.Button();
             this.BtnSalir = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -53,9 +55,9 @@
             // Bienvenido
             // 
             this.Bienvenido.Font = new System.Drawing.Font("Elephant", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bienvenido.Location = new System.Drawing.Point(3, 67);
+            this.Bienvenido.Location = new System.Drawing.Point(3, 74);
             this.Bienvenido.Name = "Bienvenido";
-            this.Bienvenido.Size = new System.Drawing.Size(207, 68);
+            this.Bienvenido.Size = new System.Drawing.Size(197, 40);
             this.Bienvenido.TabIndex = 2;
             this.Bienvenido.Text = "BIENVENIDO";
             this.Bienvenido.Click += new System.EventHandler(this.label1_Click);
@@ -67,7 +69,7 @@
             this.BtnConsultar.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("BtnConsultar.Image")));
             this.BtnConsultar.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.BtnConsultar.Location = new System.Drawing.Point(31, 310);
+            this.BtnConsultar.Location = new System.Drawing.Point(32, 298);
             this.BtnConsultar.Name = "BtnConsultar";
             this.BtnConsultar.Size = new System.Drawing.Size(121, 43);
             this.BtnConsultar.TabIndex = 1;
@@ -83,7 +85,7 @@
             this.INGRESAR.Font = new System.Drawing.Font("Times New Roman", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.INGRESAR.Image = ((System.Drawing.Image)(resources.GetObject("INGRESAR.Image")));
             this.INGRESAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.INGRESAR.Location = new System.Drawing.Point(31, 213);
+            this.INGRESAR.Location = new System.Drawing.Point(32, 218);
             this.INGRESAR.Name = "INGRESAR";
             this.INGRESAR.Size = new System.Drawing.Size(121, 46);
             this.INGRESAR.TabIndex = 0;
@@ -145,6 +147,7 @@
         private System.Windows.Forms.Label Bienvenido;
         private System.Windows.Forms.Button BtnSalir;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Timer HoraFecha;
     }
 }
 

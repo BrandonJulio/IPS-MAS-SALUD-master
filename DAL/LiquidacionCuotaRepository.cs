@@ -5,155 +5,108 @@ using System.Text;
 using System.Threading.Tasks;
 using Entity;
 using System.IO;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace DAL
 {
+        
         public class LiquidacionCuotaRepository
         {
-            private string ruta = @"Liquidacion.txt";
-            private IList<LiquidacionCuotaModeradora> liquidaciones;
-            public LiquidacionCuotaRepository()
-            {
-                liquidaciones = new List<LiquidacionCuotaModeradora>();
-            }
+        private readonly SqlConnection _connection;
+
+        public LiquidacionCuotaRepository(ConnectionManager connection)
+        {
+            _connection = connection._conexion;
+        }
+            
             public void Guardar(LiquidacionCuotaModeradora liquidacion)
             {
-                FileStream fileStream = new FileStream(ruta, FileMode.Append);
-                StreamWriter writer = new StreamWriter(fileStream);
-                writer.WriteLine(liquidacion.ToString());
-                writer.Close();
-                fileStream.Close();
-            }
-
-
-            public IList<LiquidacionCuotaModeradora> Consultar()
+                using (var command = _connection.CreateCommand())
             {
-                liquidaciones.Clear();
-                FileStream fileStream = new FileStream(ruta, FileMode.OpenOrCreate);
-                StreamReader streamReader = new StreamReader(fileStream);
-                string linea = string.Empty;
-                LiquidacionCuotaModeradora liquidacionCuotaModeradora;
-                while ((linea = streamReader.ReadLine()) != null)
-                {
-                    string[] datos = linea.Split(';');
-                    if (datos[2] == "Contributivo")
-                    {
-                        liquidacionCuotaModeradora = new Contributivo();
-
-                    }
-                    else
-                    {
-                        liquidacionCuotaModeradora = new Subsidiado();
-
-                    }
-                    liquidacionCuotaModeradora.Identificacion = datos[0];
-                    liquidacionCuotaModeradora.Identificacion = datos[0];
-                    liquidacionCuotaModeradora.NumeroLiquidacion = datos[1];
-                    liquidacionCuotaModeradora.FechaLiquidacion = DateTime.Parse(datos[2]);
-                    liquidacionCuotaModeradora.TipoAfiliacion = datos[3];
-                    liquidacionCuotaModeradora.SalarioDevengado = double.Parse(datos[4]);
-                    liquidacionCuotaModeradora.ValorServicioHospitalizacion = double.Parse(datos[5]);
-                    liquidacionCuotaModeradora.CuotaModeradoraFinal = double.Parse(datos[6]);
-                    liquidacionCuotaModeradora.CuotaModeradoraReal = double.Parse(datos[7]);
-                    liquidacionCuotaModeradora.Tarifa = double.Parse(datos[8]);
-                    liquidacionCuotaModeradora.AplicaTope = datos[9];
-                    liquidaciones.Add(liquidacionCuotaModeradora);
+                command.CommandText = @"Insert Into Ips (NumeroLiquidacion,FechaLiquidacion,Identificacion, TipoAfiliacion, SalarioDevengado,ValorServicioHospitalizacion,
+                                                            CuotaModeradoraFinal,CuotaModeradoraReal,Tarifa,AplicaTope)
+                                       values (@NumeroLiquidacion,@FechaLiquidacion,@Identificacion, @TipoAfiliacion,@SalarioDevengado,@ValorServicioHospitalizacion,
+                                                            @CuotaModeradoraFinal,@CuotaModeradoraReal,@Tarifa,@AplicaTope)";
+                command.Parameters.AddWithValue("@NumeroLiquidacion",liquidacion.NumeroLiquidacion);
+                command.Parameters.AddWithValue("@FechaLiquidacion", liquidacion.FechaLiquidacion);
+                command.Parameters.AddWithValue("@Identificacion", liquidacion.Identificacion);
+                command.Parameters.AddWithValue("@TipoAfiliacion", liquidacion.TipoAfiliacion);
+                command.Parameters.AddWithValue("@SalarioDevengado", liquidacion.SalarioDevengado);
+                command.Parameters.AddWithValue("@ValorServicioHospitalizacion", liquidacion.ValorServicioHospitalizacion);
+                command.Parameters.AddWithValue("@CuotaModeradoraFinal", liquidacion.CuotaModeradoraFinal);
+                command.Parameters.AddWithValue("@CuotaModeradoraReal",liquidacion.CuotaModeradoraReal);
+                command.Parameters.AddWithValue("@Tarifa", liquidacion.Tarifa);
+                command.Parameters.AddWithValue("@AplicaTope", liquidacion.AplicaTope);
+                var filas = command.ExecuteNonQuery();
                 }
-                fileStream.Close();
-                streamReader.Close();
-                return liquidaciones;
+                
             }
+        }
 
-            public void Eliminar(string identificacion)
-            {
-                liquidaciones.Clear();
-                liquidaciones = Consultar();
-                FileStream fileStream = new FileStream(ruta, FileMode.Create);
-                fileStream.Close();
-                foreach (var item in liquidaciones)
-                {
-                    if (item.Identificacion != identificacion)
-                    {
-                        Guardar(item);
-                    }
-                }
-            }
 
-            public void Modificar(LiquidacionCuotaModeradora liquidacion)
-            {
-                liquidaciones.Clear();
-                liquidaciones = Consultar();
-                FileStream fileStream = new FileStream(ruta, FileMode.Create);
-                fileStream.Close();
-                foreach (var item in liquidaciones)
-                {
-                    if (item.Identificacion != liquidacion.Identificacion)
-                    {
-                        Guardar(item);
-                    }
-                    else
-                    {
-                        Guardar(liquidacion);
-                    }
-                }
-            }
+        //public IList<LiquidacionCuotaModeradora> Consultar()
+        //{
 
-            public LiquidacionCuotaModeradora Buscar(string identificacion)
-            {
-                liquidaciones.Clear();
-                liquidaciones = Consultar();
-                foreach (var item in liquidaciones)
-                {
-                    if (item.Identificacion.Equals(identificacion))
-                    {
-                        return item;
-                    }
-                }
-                return null;
-            }
+
+        //}
+            //public void Eliminar(string identificacion)
+            //{
+                
+                
+            //}
+
+            //public void Modificar(LiquidacionCuotaModeradora liquidacion)
+            //{
+            //}
+
+            //public LiquidacionCuotaModeradora Buscar(string identificacion)
+            //{
+                
+            //}
 
 
 
-            public IEnumerable<LiquidacionCuotaModeradora> ListarContributivo()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo"));
-            }
-            public IEnumerable<LiquidacionCuotaModeradora> ListarSubsidiado()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado"));
-            }
+        //    public IEnumerable<LiquidacionCuotaModeradora> ListarContributivo()
+        //    {
+        //        //return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo"));
+        //    }
+        //    public IEnumerable<LiquidacionCuotaModeradora> ListarSubsidiado()
+        //    {
+        //        //return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado"));
+        //    }
 
-            public int TotalizarContributivo()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo")).Count();
-            }
-            public int TotalizarSubsidiado()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado")).Count();
-            }
-
-
-            public int TotalizarTodos()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado") || p.TipoAfiliacion.Equals("Contributivo")).Count();
-            }
-
-            public double ValorTotalLiquidacion()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo") || p.TipoAfiliacion.Equals("Subsidiado") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
-            }
+        //    public int TotalizarContributivo()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo")).Count();
+        //    }
+        //    public int TotalizarSubsidiado()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado")).Count();
+        //    }
 
 
+        //    public int TotalizarTodos()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado") || p.TipoAfiliacion.Equals("Contributivo")).Count();
+        //    }
 
-            public double ValorTotalLiquidacionContributivo()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
-            }
+        //    public double ValorTotalLiquidacion()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo") || p.TipoAfiliacion.Equals("Subsidiado") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
+        //    }
 
-            public double ValorTotalLiquidacionSubsidiado()
-            {
-                return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
-            }
 
-         }
+
+        //    public double ValorTotalLiquidacionContributivo()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Contributivo") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
+        //    }
+
+        //    public double ValorTotalLiquidacionSubsidiado()
+        //    {
+        //        return liquidaciones.Where(p => p.TipoAfiliacion.Equals("Subsidiado") && p.CuotaModeradoraFinal.Equals(p.CuotaModeradoraFinal)).Sum(p => p.CuotaModeradoraFinal);
+        //    }
+
+        //}
 }
